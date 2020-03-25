@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<div class= "component">
+    <table class="table table-striped table-sm">
+        <tr>
+            <th>Id:</th>
+            <td>
+                <input [(ngModel)]="student.id" type= "number" size = "10"diabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Name:</th>
+            <td>
+                <input [(ngModel)]="student.name" type= "text" size = "20">
+            </td>
+        </tr>
+        <tr>
+            <th>SAT:</th>
+            <td>
+                <input [(ngModel)]="student.sat" type= "number" size = "10">
+            </td>
+        </tr>
+        <tr>
+            <th>GPA:</th>
+            <td>
+                <input [(ngModel)]="student.gpa" type= "text" size = "10">
+            </td>
+        </tr>
+        <tr *ngIf="student.major">
+            <th>Major:</th>
+            <td>
+                <input [ngModel]="student.major.name" type= "text" size = "20">
+            </td>
+        </tr>
+        <tr *ngIf="!student.major">
+            <th>Major:</th>
+            <td>
+                <input value="UNDECLARED" type= "text">
+            </td>
+        </tr>
+        <td colspan="2">
+            <button (click) ="save()" class= "btn btn-primary">Save</button>
+        </td>
+    </table>
+</div>

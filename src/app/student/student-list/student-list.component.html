@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<a routerLink="/students/create">Create</a>
+<div class = "component">
+    <table class = "table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>SAT</th>
+            <th>GPA</th>
+            <th>Major</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let s of students | sort: 'name'">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.sat}}</td>
+            <td>{{s.gpa}}</td>
+            <td>{{s.major != null ? s.major.name : "UNDECLARED"}}</td>
+            <td>
+                <a routerLink="/students/detail/{{s.id}}">Detail</a> |
+                <a routerLink="/students/edit/{{s.id}}">Edit</a>
+            </td>
+
+
+        </tr>
+
+        
+    </table>
+</div>
