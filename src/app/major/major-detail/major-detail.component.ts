@@ -11,6 +11,23 @@ import { Major } from '../major.class';
 export class MajorDetailComponent implements OnInit {
 
   major:Major = new Major();
+  searchCriteria: string ='';
+
+changeMinSat(): void {
+  if(this.major.minSat <= 1000){
+    this.major.minSat += 100;
+  } else{
+    this.major.minSat +=50;
+  }
+  this.majorsvc.change(this.major).subscribe(
+    res => {
+      console.log("Changed minSat");
+    },
+    err => {
+      console.error("Error changing minSat")
+    }
+  );
+}
 
 delete(): void{
   this.majorsvc.remove(this.major).subscribe(
@@ -21,7 +38,7 @@ delete(): void{
     err => {
       console.error("Major delete failed", err);
     }
-  )
+  );
 }
   constructor(
     private route: ActivatedRoute,

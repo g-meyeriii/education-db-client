@@ -27,7 +27,9 @@
                 <input [(ngModel)]="major.minSat" type ="text" size = "10"disabled>
             </td>
             <td colspan="2">
-                <button (click)="delete()" class="btn btn-danger">Delete</button>
+                <button (click)="delete()" class="btn btn-danger">Delete</button> |
+                <button (click)="changeMinSat()" class="btn btn-warning">Change min SAT</button>
+
             </td>
         </tr>
     </table>

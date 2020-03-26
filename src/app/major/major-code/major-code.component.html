@@ -1,0 +1,18 @@
+<app-menu></app-menu>
+<div class="component">
+    <table class="table table-sm">
+    <tr>
+        <td>Code:</td>
+        <td><input [(ngModel)]="major.code" type="text" size="15"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="check()" class="btn btn-primary">Check Code</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">{{message}}</td>
+
+    </tr>
+    </table>
+</div>

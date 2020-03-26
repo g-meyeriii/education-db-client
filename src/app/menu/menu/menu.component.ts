@@ -9,7 +9,8 @@ import { Menu } from '../menu.class';
 export class MenuComponent implements OnInit {
   menus: Menu[] =[
     new Menu("Majors","/majors/list","The major list page"),
-    new Menu("Students","/students/list","The student list page")
+    new Menu("Students","/students/list","The student list page"),
+    new Menu("Major Code","majors/code","Check for Major code")
   ];
 
   constructor() { }

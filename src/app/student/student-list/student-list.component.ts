@@ -9,7 +9,8 @@ import { StudentService } from '../student.service';
 })
 export class StudentListComponent implements OnInit {
   students: Student[] = [];
-
+  searchCriteria: string ="";
+  
   constructor(
     private student: StudentService
   ) { }
